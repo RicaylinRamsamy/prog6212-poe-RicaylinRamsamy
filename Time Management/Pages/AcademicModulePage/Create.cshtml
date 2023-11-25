@@ -1,0 +1,71 @@
+﻿@page
+@model Time_Management.Pages.AcademicModulePage.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="container mt-3">
+    <h1 class="text-success">Create</h1>
+
+    <h4 class="text-success">Academic Module</h4>
+    <hr />
+
+    <div class="row">
+        <div class="col-md-6">
+            <form method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <div class="form-group">
+                    <label asp-for="AcademicModule.ModuleId" class="control-label text-success"></label>
+                    <input asp-for="AcademicModule.ModuleId" class="form-control" />
+                    <span asp-validation-for="AcademicModule.ModuleId" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="AcademicModule.ModuleCode" class="control-label text-success"></label>
+                    <input asp-for="AcademicModule.ModuleCode" class="form-control" />
+                    <span asp-validation-for="AcademicModule.ModuleCode" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="AcademicModule.ModuleName" class="control-label text-success"></label>
+                    <input asp-for="AcademicModule.ModuleName" class="form-control" />
+                    <span asp-validation-for="AcademicModule.ModuleName" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="AcademicModule.ModuleCredits" class="control-label text-success"></label>
+                    <input asp-for="AcademicModule.ModuleCredits" class="form-control" />
+                    <span asp-validation-for="AcademicModule.ModuleCredits" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="AcademicModule.ModuleClassHours" class="control-label text-success"></label>
+                    <input asp-for="AcademicModule.ModuleClassHours" class="form-control" />
+                    <span asp-validation-for="AcademicModule.ModuleClassHours" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="AcademicModule.ModuleReminder" class="control-label text-success"></label>
+                    <input asp-for="AcademicModule.ModuleReminder" class="form-control" />
+                    <span asp-validation-for="AcademicModule.ModuleReminder" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-success" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-page="Index" class="text-success">Back to List</a>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

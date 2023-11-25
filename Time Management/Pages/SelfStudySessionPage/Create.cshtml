@@ -1,0 +1,77 @@
+﻿@page
+@model Time_Management.Pages.SelfStudySessionPage.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="container mt-3">
+    <h1 class="text-primary">Create</h1>
+
+    <h4 class="text-secondary">SelfStudySession</h4>
+    <hr />
+
+    <div class="row">
+        <div class="col-md-4">
+            <form method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <div class="form-group">
+                    <label asp-for="SelfStudySession.SessionId" class="control-label"></label>
+                    <input asp-for="SelfStudySession.SessionId" class="form-control" />
+                    <span asp-validation-for="SelfStudySession.SessionId" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="SelfStudySession.ModuleCode" class="control-label"></label>
+                    <input asp-for="SelfStudySession.ModuleCode" class="form-control" />
+                    <span asp-validation-for="SelfStudySession.ModuleCode" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="SelfStudySession.ModuleCredits" class="control-label"></label>
+                    <input asp-for="SelfStudySession.ModuleCredits" class="form-control" />
+                    <span asp-validation-for="SelfStudySession.ModuleCredits" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="SelfStudySession.ModuleClassHours" class="control-label"></label>
+                    <input asp-for="SelfStudySession.ModuleClassHours" class="form-control" />
+                    <span asp-validation-for="SelfStudySession.ModuleClassHours" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="SelfStudySession.SemesterNumWeeks" class="control-label"></label>
+                    <input asp-for="SelfStudySession.SemesterNumWeeks" class="form-control" />
+                    <span asp-validation-for="SelfStudySession.SemesterNumWeeks" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="SelfStudySession.SelfStudyHours" class="control-label"></label>
+                    <input asp-for="SelfStudySession.SelfStudyHours" class="form-control" />
+                    <span asp-validation-for="SelfStudySession.SelfStudyHours" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="SelfStudySession.DateStudied" class="control-label"></label>
+                    <input asp-for="SelfStudySession.DateStudied" class="form-control" />
+                    <span asp-validation-for="SelfStudySession.DateStudied" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-page="Index" class="btn btn-secondary">Back to List</a>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

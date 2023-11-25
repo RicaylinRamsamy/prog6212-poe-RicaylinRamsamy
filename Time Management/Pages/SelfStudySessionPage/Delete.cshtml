@@ -1,0 +1,60 @@
+﻿@page
+@model Time_Management.Pages.SelfStudySessionPage.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<div class="container mt-3">
+    <h1 class="text-danger">Delete</h1>
+
+    <h3 class="text-warning">Are you sure you want to delete this?</h3>
+    <div>
+        <h4 class="text-secondary">SelfStudySession</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.SelfStudySession.ModuleCode)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.SelfStudySession.ModuleCode)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.SelfStudySession.ModuleCredits)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.SelfStudySession.ModuleCredits)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.SelfStudySession.ModuleClassHours)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.SelfStudySession.ModuleClassHours)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.SelfStudySession.SemesterNumWeeks)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.SelfStudySession.SemesterNumWeeks)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.SelfStudySession.SelfStudyHours)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.SelfStudySession.SelfStudyHours)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.SelfStudySession.DateStudied)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.SelfStudySession.DateStudied)
+            </dd>
+        </dl>
+
+        <form method="post">
+            <input type="hidden" asp-for="SelfStudySession.SessionId" />
+            <input type="submit" value="Delete" class="btn btn-danger" /> |
+            <a asp-page="./Index" class="btn btn-secondary">Back to List</a>
+        </form>
+    </div>
+</div>

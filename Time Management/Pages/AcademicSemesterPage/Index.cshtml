@@ -1,0 +1,52 @@
+﻿@page
+@model Time_Management.Pages.AcademicSemesterPage.IndexModel
+
+@{
+    ViewData["Title"] = "Academic Semester Page Index";
+}
+
+<div class="container mt-3">
+    <h1 class="text-success">Index</h1>
+
+    <p>
+        <a class="btn btn-success" asp-page="Create">Create New</a>
+    </p>
+
+    <table class="table table-bordered table-success">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.AcademicSemester[0].SemesterName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AcademicSemester[0].SemesterStartDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AcademicSemester[0].SemesterNumWeeks)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.AcademicSemester)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SemesterName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SemesterStartDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SemesterNumWeeks)
+                    </td>
+                    <td>
+                        <a class="btn btn-warning" asp-page="./Edit" asp-route-id="@item.SemesterId">Edit</a>
+                        <a class="btn btn-info" asp-page="./Details" asp-route-id="@item.SemesterId">Details</a>
+                        <a class="btn btn-danger" asp-page="./Delete" asp-route-id="@item.SemesterId">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

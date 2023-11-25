@@ -1,0 +1,64 @@
+﻿@page
+@model Time_Management.Pages.AcademicModulePage.IndexModel
+
+@{
+    ViewData["Title"] = "Academic Module Page Index";
+}
+
+<div class="container mt-3">
+    <h1 class="text-success">Academic Module Page Index</h1>
+
+    <p>
+        <a class="btn btn-success" asp-page="Create">Create New</a>
+    </p>
+
+    <table class="table table-bordered table-success">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.AcademicModule[0].ModuleCode)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AcademicModule[0].ModuleName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AcademicModule[0].ModuleCredits)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AcademicModule[0].ModuleClassHours)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AcademicModule[0].ModuleReminder)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.AcademicModule)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ModuleCode)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ModuleName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ModuleCredits)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ModuleClassHours)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ModuleReminder)
+                    </td>
+                    <td>
+                        <a class="btn btn-warning" asp-page="./Edit" asp-route-id="@item.ModuleId">Edit</a>
+                        <a class="btn btn-info" asp-page="./Details" asp-route-id="@item.ModuleId">Details</a>
+                        <a class="btn btn-danger" asp-page="./Delete" asp-route-id="@item.ModuleId">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

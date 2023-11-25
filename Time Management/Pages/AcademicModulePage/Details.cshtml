@@ -1,0 +1,52 @@
+﻿@page
+@model Time_Management.Pages.AcademicModulePage.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="container mt-3">
+    <h1 class="text-success">Details</h1>
+
+    <div>
+        <h4 class="text-success">Academic Module</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.AcademicModule.ModuleCode)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.AcademicModule.ModuleCode)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.AcademicModule.ModuleName)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.AcademicModule.ModuleName)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.AcademicModule.ModuleCredits)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.AcademicModule.ModuleCredits)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.AcademicModule.ModuleClassHours)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.AcademicModule.ModuleClassHours)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.AcademicModule.ModuleReminder)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.AcademicModule.ModuleReminder)
+            </dd>
+        </dl>
+    </div>
+
+    <div>
+        <a asp-page="./Edit" asp-route-id="@Model.AcademicModule?.ModuleId" class="btn btn-warning">Edit</a>
+        <a asp-page="./Index" class="btn btn-success">Back to List</a>
+    </div>
+</div>

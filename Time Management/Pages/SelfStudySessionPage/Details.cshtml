@@ -1,0 +1,58 @@
+﻿@page
+@model Time_Management.Pages.SelfStudySessionPage.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="container mt-3">
+    <h1>Details</h1>
+
+    <div>
+        <h4 class="text-secondary">SelfStudySession</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.SelfStudySession.ModuleCode)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.SelfStudySession.ModuleCode)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.SelfStudySession.ModuleCredits)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.SelfStudySession.ModuleCredits)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.SelfStudySession.ModuleClassHours)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.SelfStudySession.ModuleClassHours)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.SelfStudySession.SemesterNumWeeks)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.SelfStudySession.SemesterNumWeeks)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.SelfStudySession.SelfStudyHours)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.SelfStudySession.SelfStudyHours)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.SelfStudySession.DateStudied)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.SelfStudySession.DateStudied)
+            </dd>
+        </dl>
+
+        <div>
+            <a asp-page="./Edit" asp-route-id="@Model.SelfStudySession?.SessionId" class="btn btn-primary">Edit</a> |
+            <a asp-page="./Index" class="btn btn-secondary">Back to List</a>
+        </div>
+    </div>
+</div>

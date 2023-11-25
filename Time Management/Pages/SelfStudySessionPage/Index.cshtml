@@ -1,0 +1,70 @@
+﻿@page
+@model Time_Management.Pages.SelfStudySessionPage.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container mt-3">
+    <h1 class="text-primary">Index</h1>
+
+    <p>
+        <a asp-page="Create" class="btn btn-success">Create New</a>
+    </p>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.SelfStudySession[0].ModuleCode)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SelfStudySession[0].ModuleCredits)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SelfStudySession[0].ModuleClassHours)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SelfStudySession[0].SemesterNumWeeks)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SelfStudySession[0].SelfStudyHours)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SelfStudySession[0].DateStudied)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.SelfStudySession)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ModuleCode)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ModuleCredits)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ModuleClassHours)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SemesterNumWeeks)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SelfStudyHours)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DateStudied)
+                    </td>
+                    <td>
+                        <a asp-page="./Edit" asp-route-id="@item.SessionId" class="btn btn-warning">Edit</a> |
+                        <a asp-page="./Details" asp-route-id="@item.SessionId" class="btn btn-info">Details</a> |
+                        <a asp-page="./Delete" asp-route-id="@item.SessionId" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

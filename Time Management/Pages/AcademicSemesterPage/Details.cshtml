@@ -1,0 +1,40 @@
+﻿@page
+@model Time_Management.Pages.AcademicSemesterPage.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="container mt-3">
+    <h1 class="text-success">Details</h1>
+
+    <div>
+        <h4 class="text-success">Academic Semester</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.AcademicSemester.SemesterName)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.AcademicSemester.SemesterName)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.AcademicSemester.SemesterStartDate)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.AcademicSemester.SemesterStartDate)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.AcademicSemester.SemesterNumWeeks)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.AcademicSemester.SemesterNumWeeks)
+            </dd>
+        </dl>
+    </div>
+
+    <div>
+        <a asp-page="./Edit" asp-route-id="@Model.AcademicSemester?.SemesterId" class="btn btn-warning">Edit</a> |
+        <a asp-page="./Index" class="btn btn-success">Back to List</a>
+    </div>
+</div>
